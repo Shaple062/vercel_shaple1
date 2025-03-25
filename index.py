@@ -21,7 +21,7 @@ def course():
 @app.route("/today")
 def today():
     tz = timezone(timedelta(hours=+8))
-    now = datetime.now()
+    now = datetime.now(tz)
     return render_template("today.html", datetime = str(now))
 
 @app.route("/welcome",methods=["GET"])
